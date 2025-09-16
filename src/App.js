@@ -98,7 +98,7 @@ async function init(register) {
       properties: {}
     });
   });
-  await loadRemoteComponents(register);
+ // await loadRemoteComponents(register);
 }
 
 /**

@@ -57,7 +57,7 @@ class Register {
   }
 
   getComponent = (name) => {
-    return this.components[name].component || this.components._Undefined;
+    return this.components[name]?.component || this.components['_Undefined']?.component;
   };
 
   callFunction = (name, attr, props, callerArgs) => {
@@ -70,6 +70,7 @@ class Register {
   registerComponent = ({name, component, type, properties}) => {
     
     if (!this.components[name]) {
+      console.log('registering component', name);
       this.components[name] = {component, type, properties};
   
     }
