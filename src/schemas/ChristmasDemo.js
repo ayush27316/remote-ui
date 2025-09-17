@@ -34,7 +34,7 @@ export const christmasHeaderStep1 = `{
       "v:children": [
         {
           "v:name": "Image",
-          "source": "../assets/images/santa.png",
+          "source": "../../images/santa.png",
           "style": {
             "width": 28,
             "height": 28,
@@ -76,7 +76,7 @@ export const christmasMainBannerStep2 = `{
     "padding": 20,
     "paddingBottom": 40
   },
-  "source": "../assets/images/christmas2.jpg",
+  "source": "../../images/christmas2.jpg",
   "resizeMode": "cover",
   "v:children": [
     {

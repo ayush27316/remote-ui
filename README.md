@@ -1,31 +1,30 @@
 # Remote UI Rendering
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-blue?style=for-the-badge)](https://68ca1fcb325feba206aa9afc--superb-cassata-f42657.netlify.app/)
+A React Native application that demonstrates **Remote UI Rendering** - the ability to dynamically transform your app's interface using JSON schemas without requiring app store updates.
 
-A revolutionary React Native application that demonstrates **Remote UI Rendering** - the ability to dynamically transform your app's interface using JSON schemas without requiring app store updates.
+Initial implementation was motivated by the project at [https://github.com/fodori/jsonui](https://github.com/fodori/jsonui).
 
-Initial implmentation was motivated by proeject at https://github.com/fodori/jsonui .
-## 🚀 Live Demo
+## Live Demo
 
-**Experience the magic:** [https://68ca1fcb325feba206aa9afc--superb-cassata-f42657.netlify.app/](https://68ca1fcb325feba206aa9afc--superb-cassata-f42657.netlify.app/)
+**Experience the application:** [https://68ca1fcb325feba206aa9afc--superb-cassata-f42657.netlify.app/](https://68ca1fcb325feba206aa9afc--superb-cassata-f42657.netlify.app/)
 
-## 🎯 What is Remote UI Rendering?
+## What is Remote UI Rendering?
 
 Remote UI Rendering revolutionizes how we build and update user interfaces. Instead of hardcoding layouts and components into your application, this approach allows you to define UI structures using JSON schemas that can be interpreted and rendered dynamically at runtime.
 
 Your app becomes a rendering engine that receives component definitions from a remote source and translates them into native interface elements, eliminating the traditional bottleneck of app store deployments for UI changes.
 
-## ✨ Key Features
+## Key Features
 
-- **🔄 Dynamic UI Updates**: Transform your app's interface in real-time
-- **📱 Cross-Platform**: Built with React Native and Expo for iOS, Android, and Web
-- **🎨 JSON Schema Driven**: Define complex UI layouts using simple JSON structures
-- **⚡ No App Store Updates**: Change themes, layouts, and components without deployments
-- **🎪 Interactive Demo**: Live demonstration of Christmas theme transformation
-- **🛠️ Component Registry**: Extensible system for registering custom components
-- **📊 Real-time Rendering**: Instant UI updates based on remote schemas
+- **Dynamic UI Updates**: Transform your app's interface in real-time
+- **Cross-Platform**: Built with React Native and Expo for iOS, Android, and Web
+- **JSON Schema Driven**: Define complex UI layouts using simple JSON structures
+- **No App Store Updates**: Change themes, layouts, and components without deployments
+- **Interactive Demo**: Live demonstration of Christmas theme transformation
+- **Component Registry**: Extensible system for registering custom components
+- **Real-time Rendering**: Instant UI updates based on remote schemas
 
-## 🏗️ Architecture
+## Architecture
 
 ### Core Components
 
@@ -43,7 +42,7 @@ Your app becomes a rendering engine that receives component definitions from a r
 - **Lottie React Native** - Animation support
 - **Native Base** - UI component library
 
-## 🎮 Interactive Demo
+## Interactive Demo
 
 The application includes a comprehensive demo that showcases:
 
@@ -52,7 +51,7 @@ The application includes a comprehensive demo that showcases:
 3. **Christmas Navigation** - Bottom navigation with holiday color scheme
 4. **Real-time Schema Updates** - See JSON schemas applied instantly to the UI
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 src/
@@ -77,7 +76,7 @@ src/
 └── navigation/          # Navigation configuration
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -134,7 +133,7 @@ npm run ios
 npm run android
 ```
 
-## 🎨 JSON Schema Format
+## JSON Schema Format
 
 The application uses a custom JSON schema format to define UI components:
 
@@ -177,7 +176,7 @@ The application uses a custom JSON schema format to define UI components:
 - `v:children`: Child components or text content
 - Custom properties: Component-specific props
 
-## 🔧 Component Registration
+## Component Registration
 
 Components are registered through the Register system:
 
@@ -199,7 +198,7 @@ await register.registerRemoteComponent({
 });
 ```
 
-## 🌟 Use Cases
+## Use Cases
 
 - **A/B Testing**: Test different UI layouts without app updates
 - **Seasonal Themes**: Apply holiday themes dynamically
@@ -208,7 +207,7 @@ await register.registerRemoteComponent({
 - **Rapid Prototyping**: Quickly test new UI concepts
 - **Multi-tenant Apps**: Different UI themes for different clients
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
 
@@ -218,17 +217,17 @@ We welcome contributions! Please feel free to submit a Pull Request. For major c
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👨‍💻 Author
+## Author
 
 **Ayush Srivastava**
 - LinkedIn: [@ayush-srivastava-4b92a122b](https://www.linkedin.com/in/ayush-srivastava-4b92a122b/)
 - GitHub: [@ayush27316](https://github.com/ayush27316)
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Built with [React Native](https://reactnative.dev/)
 - Powered by [Expo](https://expo.dev/)
@@ -237,6 +236,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**⭐ Star this repository if you found it helpful!**
+**Star this repository if you found it helpful!**
 
-*Building the future of dynamic user interfaces* 🚀
+*Building the future of dynamic user interfaces*
