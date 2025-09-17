@@ -23,7 +23,6 @@ const ProductSlider = () => {
     { id: '7', imageUrl: shoes7, price: 'C$ 30.99' }
   ];
 
-  // Define fixed dimensions and gaps for precise alignment
   const ROW_GAP = 5;
 
   return (
@@ -35,7 +34,6 @@ const ProductSlider = () => {
       >
 
 
-        {/* Child 1: Two 'small' cards */}
         <View style={[styles.columnContainer, { rowGap: ROW_GAP }]}>
           <Product
             {...productData[0]}
@@ -54,7 +52,6 @@ const ProductSlider = () => {
           />
         </View>
 
-        {/* Child 2: One 'full' card */}
         <View style={styles.columnContainer}>
           <Product
             {...productData[2]}
@@ -68,7 +65,6 @@ const ProductSlider = () => {
           />
         </View>
 
-        {/* Child 3: Two 'small' cards */}
         <View style={[styles.columnContainer, { rowGap: ROW_GAP }]}>
           <Product
             {...productData[3]}
@@ -84,7 +80,6 @@ const ProductSlider = () => {
           />
         </View>
 
-        {/* Child 4: Two 'small' cards */}
         <View style={[styles.columnContainer, { rowGap: ROW_GAP }]}>
           <Product
             {...productData[5]}
@@ -120,13 +115,11 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
   },
   mainContainer: {
-    // This is the main container with flex and columnGap
     flexDirection: 'row',
     columnGap: 5,
     paddingHorizontal: 16,
   },
   columnContainer: {
-    // This is for each child, controlling vertical arrangement
     flexDirection: 'column',
     justifyContent: 'flex-start',
   }

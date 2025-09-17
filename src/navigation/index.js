@@ -4,9 +4,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Stack = createNativeStackNavigator();
 
-/**
- * Dynamically create navigator for screens. 
- */
 export default function Navigator({pages, initialRouteName}) {
   return (
     <NavigationContainer>

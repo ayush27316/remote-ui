@@ -69,9 +69,5 @@ const Icon = ({
     );
 };
 
-/**
- * memo prevents re-rendering if props don't change on
- * parent re-render
- */
 export default Icon;
 

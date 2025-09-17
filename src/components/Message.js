@@ -9,11 +9,6 @@ import {
 import Button from './Button'
 import { Ionicons } from '@expo/vector-icons';
 
-/**
- * all interactive compoenents
- * must be disabled while a modal
- * is yet to be interacted with.
- */
 
 
 const Modal = ({

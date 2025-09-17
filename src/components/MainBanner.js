@@ -4,9 +4,6 @@ import { ImageBackground } from 'react-native';
 import Button from './Button'
 import { Dimensions } from 'react-native';
 const { width } = Dimensions.get('window');
-/**
- * [To do]: Image used here must be fetched 
- */
 const MainBanner = () => {
   return (
     <ImageBackground

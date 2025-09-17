@@ -9,10 +9,7 @@ import { useMemo } from 'react';
 
 const DemoScreen = () => {
   const register = useRegister(); 
-  //use components from the register as server might have replaced 
-  //native components with remote ones 
   const MainBanner = useMemo(()=>(register.getComponent('MainBanner')));
-  //const Banner = useMemo(()=>(register.getComponent('ChristmasBanner')),[]);
   const Header = useMemo(()=>(register.getComponent('Header')));
   const BottomNavigation = useMemo(()=>(register.getComponent('BottomNavigation')));
 
@@ -54,7 +51,6 @@ const DemoScreen = () => {
                 />   
               <Slider/>
         </View>
-{/* <Banner/> */}
         <View style={{
           paddingHorizontal:15,
           paddingTop: 25,
@@ -99,31 +95,5 @@ const DemoScreen = () => {
   );
 }
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: 'white'
-//   },
-//   baseText: {
-//     fontWeight: 'bold',
-//   },
-//   innerText: {
-//     color: 'red',
-//   },
-// });
-// const bgStyles = StyleSheet.create({
-//   backgroundImage: {
-//     width: width,
-//     height: 300, // Adjust as needed
-//     justifyContent: 'flex-end',
-//     padding: 20,
-//     paddingBottom: 40,
-
-//   },
-//   buttonContainer: {
-//     alignSelf: 'flex-start',
-//     paddingBottom: 20,
-//   },
-// });
 
 export default  DemoScreen;

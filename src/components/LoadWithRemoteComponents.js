@@ -7,8 +7,6 @@ const LoadWithRemoteComponent = ({name, schema, target})=>{
     
     useMemo(() => {
       if(name && schema){
-        console.log('LoadWithRemoteComponent: Registering remote component', name);
-        console.log('Schema:', schema);
         register.registerRemoteComponent({
           name,
           schema,

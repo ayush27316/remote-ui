@@ -53,7 +53,6 @@ const featuredProducts = [
 
 
 const ProductSlider = ({ title, products, onProductPress }) => {
-  // This function tells the FlatList how to render each individual product
   const renderProduct = ({ item }) => (
     <View
     style={styles.productItem}
@@ -61,12 +60,8 @@ const ProductSlider = ({ title, products, onProductPress }) => {
     >
 
 <Product
-      // Pass all properties from the product item directly to the Product component
       {...item}
-      // Handle the press event for each product
       onPress={() => onProductPress(item)}
-      // Add some margin to the right of each item for spacing
-      
     />
     </View>
     
@@ -78,13 +73,9 @@ const ProductSlider = ({ title, products, onProductPress }) => {
       <FlatList
         data={products}
         renderItem={renderProduct}
-        // Use a unique key for each item, assuming each product has a unique 'id'
         keyExtractor={(item) => item.id.toString()}
-        // This is the essential prop to make the list horizontal
         horizontal={true}
-        // Hides the horizontal scroll bar for a cleaner look
         showsHorizontalScrollIndicator={false}
-        // Style for the content container, useful for adding padding
         contentContainerStyle={styles.listContent}
       />
     </View>
@@ -94,19 +85,19 @@ const ProductSlider = ({ title, products, onProductPress }) => {
 const styles = StyleSheet.create({
   container: {
     marginBottom: 24,
-    marginTop: 20, // Space below the entire slider component
+    marginTop: 20,
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
-    marginBottom: 12, // Space between the title and the products
-    marginLeft: 16,   // Align title with the start of the first product
+    marginBottom: 12,
+    marginLeft: 16,
   },
   listContent: {
-    paddingHorizontal: 16, // Adds padding on the left of the first item and right of the last item
+    paddingHorizontal: 16,
   },
   productItem: {
-    marginRight: 5, // Adds space between the products in the list
+    marginRight: 5,
   },
 });
 

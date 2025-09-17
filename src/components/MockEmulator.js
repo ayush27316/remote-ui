@@ -5,7 +5,6 @@ import MockPhone from './MockPhone';
 import LoadWithRemoteComponent from './LoadWithRemoteComponents';
 import DemoScreen from './DemoScreen';
 import { demoSteps } from '../schemas/ChristmasDemo';
-import ResponsiveBlocker from './ResponsiveBlocker';
 
 const { width: screenWidth } = Dimensions.get('window');
 
@@ -30,8 +29,7 @@ const MockEmulator = () => {
   const isCompact = screenWidth < 1200;
 
   return (
-    <ResponsiveBlocker minWidth={900}>
-      <View style={styles.container}>
+    <View style={styles.container}>
         {/* Header */}
         <View style={styles.header}>
           <View style={styles.headerContent}>
@@ -161,7 +159,6 @@ const MockEmulator = () => {
           </View>
         </View>
       </View>
-    </ResponsiveBlocker>
   );
 };
 

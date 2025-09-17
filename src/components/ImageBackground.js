@@ -3,11 +3,9 @@ import { ImageBackground, StyleSheet, Dimensions } from 'react-native';
 
 const { width: screenWidth } = Dimensions.get('window');
 
-// Better image management
 const imageMap = {
   "../assets/images/christmas2.jpg": require("../assets/images/christmas2.jpg"),
   "../assets/images/main-banner.jpg": require("../assets/images/main-banner.jpg"),
-  // Add more images here
 };
 
 function resolveImage(source) {

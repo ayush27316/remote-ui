@@ -17,29 +17,6 @@ const pages = {
 };
 
 
-/**
- * test fetch
- */
-// async function fetch() {
-//   return Promise.resolve([
-//     {
-//       name: 'MainBanner',
-//       schema: bannerSchema,
-//       type: 'component', //'component' 
-//       properties: {
-//         // options: ['main-page', 'hide-bar']
-//     }
-//     },
-//     {
-//       name: 'ChristmasBanner',
-//       schema: Banner,
-//       type: 'component', //'component' 
-//       properties: {
-//         // options: ['main-page', 'hide-bar']
-//     }
-//     }
-//   ]);
-// }
 
 async function fetch() {
   return Promise.resolve([
@@ -52,28 +29,15 @@ async function fetch() {
     {
       name: 'MainBanner',
       schema: bannerSchema,
-      type: 'component', //'component' 
-      properties: {// options: ['main-page', 'hide-bar']
-        }
+      type: 'component',
+      properties: {}
     }
   ]);
 }
 
-/**
- * check with server if app should register any components. If so,
- * initiate registration and pre-render components from schemas and 
- * asynchronously save schemas to local storage. If component already 
- * exists then it is replaced.
- */
 async function loadRemoteComponents(register) {
   const data = await fetch();
 
-  //some components might depend on other
-  //work around for this is to send components
-  //in an order that won't cause any dependencies issues
-  //[To Do]: allow components to pass in list of components
-  //they depend on and register accordingly
-  //if a component/page with same name exists then it is replaced
   data.forEach(({ name, schema, type, properties }) => {
     register.registerRemoteComponent({
       name,
@@ -82,14 +46,9 @@ async function loadRemoteComponents(register) {
       properties
     });
   });
-  //  await preRenderRemoteComponents();
-  //  registerComponent();
-  //  saveSchemasToDisk();
 }
 
 async function init(register) {
-  //we register both native and remote pages/components with the registry 
-  //so that we can build routes dynamically.
   Object.entries(pages).forEach(([name, Component]) => {
     register.registerComponent({
       name,
@@ -98,12 +57,8 @@ async function init(register) {
       properties: {}
     });
   });
- // await loadRemoteComponents(register);
 }
 
-/**
- * Load all registered pages with AppRegistry.
- */
 function AppInner() {
   const register = useRegister();
   const [initialized, setInitialized] = useState(false);
