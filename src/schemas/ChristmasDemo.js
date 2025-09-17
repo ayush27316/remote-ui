@@ -2,8 +2,8 @@
 
 //this is a work around to load the images for the demo
 //Better way to do this is to provide functionality for frtc
-require('../../images/santa.png');
-require('../../images/christmas2.jpg');
+require('../../assets/images/santa.png');
+require('../../assets/images/christmas2.jpg');
 
 
 // Step 1: Add Christmas Header with Santa Icon
@@ -34,7 +34,7 @@ export const christmasHeaderStep1 = `{
       "v:children": [
         {
           "v:name": "Image",
-          "source": "../../images/santa.png",
+          "source": "../../assets/images/santa.png",
           "style": {
             "width": 28,
             "height": 28,
@@ -76,7 +76,7 @@ export const christmasMainBannerStep2 = `{
     "padding": 20,
     "paddingBottom": 40
   },
-  "source": "../../images/christmas2.jpg",
+  "source": "../../assets/images/christmas2.jpg",
   "resizeMode": "cover",
   "v:children": [
     {
@@ -142,7 +142,6 @@ export const christmasMainBannerStep2 = `{
           "iconAlign": "left",
           "type": "link",
           "href": "Shop",
-          "style": "clear",
           "iconName": "gift",
           "color": "white",
           "title": "SHOP CHRISTMAS DEALS",
