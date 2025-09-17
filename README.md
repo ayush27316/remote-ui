@@ -4,6 +4,7 @@
 
 A revolutionary React Native application that demonstrates **Remote UI Rendering** - the ability to dynamically transform your app's interface using JSON schemas without requiring app store updates.
 
+Initial implmentation was motivated by proeject at https://github.com/fodori/jsonui .
 ## 🚀 Live Demo
 
 **Experience the magic:** [https://68ca1fcb325feba206aa9afc--superb-cassata-f42657.netlify.app/](https://68ca1fcb325feba206aa9afc--superb-cassata-f42657.netlify.app/)

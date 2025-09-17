@@ -1,13 +1,12 @@
 import React from 'react';
 import { View, FlatList, Text,StyleSheet } from 'react-native';
-import Product from './Product'; // Adjust path as needed
-import shoes9 from '../assets/images/8.png'; // Adjust based on actual image path
+import Product from './Product'; 
 
 const PRODUCTS = [
   {
     id: '1',
     price: 'C$99',
-    imageUrl: require('../assets/images/4.png'),
+    imageUrl: require('../../assets/images/4.png'),
     bannerTitle: '60% DISCOUNT',
     bannerType: 'discount',
     description1: 'HIGH QUALITY COTTON',
@@ -18,7 +17,7 @@ const PRODUCTS = [
   {
     id: '2',
     price: 'C$79',
-    imageUrl: require('../assets/images/5.png'),
+    imageUrl: require('../../assets/images/5.png'),
     bannerTitle: 'NEW DROP',
     bannerType: 'info',
     description1: 'PREMIUM LEATHER',
@@ -29,7 +28,7 @@ const PRODUCTS = [
   {
     id: '3',
     price: 'C$49',
-    imageUrl: require('../assets/images/6.png'),
+    imageUrl: require('../../assets/images/6.png'),
     bannerTitle: 'BEST VALUE',
     bannerType: 'highlight',
     description1: 'SOFT & COMFY',

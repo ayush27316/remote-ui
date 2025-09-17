@@ -1,5 +1,4 @@
 import Button from './Button';
-import BottomNavigation from './BottomNavigation'
 import { View, Text} from 'react-native';
 import { ScrollView } from 'react-native';
 import ProductSlider from './ProductSlider';
@@ -8,6 +7,9 @@ import useRegister from '../register/hooks/useRegister';
 import { useMemo } from 'react';
 
 const DemoScreen = () => {
+  //only few components are fetched from the register for demo
+  //only these components can be replaced by remote components
+  //To Do: how can we make all components remote without this boiler plate
   const register = useRegister(); 
   const MainBanner = useMemo(()=>(register.getComponent('MainBanner')));
   const Header = useMemo(()=>(register.getComponent('Header')));

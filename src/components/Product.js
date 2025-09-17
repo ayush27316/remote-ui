@@ -1,9 +1,9 @@
 import Button from './Button';
-import React, { useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import {View,Text,StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { Image } from 'expo-image';
-import AntDesign from '@expo/vector-icons/AntDesign';
+import { AntDesign } from '@expo/vector-icons';
 
 const ProductCard = ({
   type = 'display', //'row' , 'column', 'cart'
@@ -42,17 +42,12 @@ const ProductCard = ({
         contentFit="cover"
       />
   
-      {/* Price and Description - Bottom Left */}
-    
-  
-      {/* Banner */}
       {bannerTitle && (
         <View style={[styles.bannerContainer, getBannerStyle()]}>
           <Text style={styles.bannerText}>{bannerTitle}</Text>
         </View>
       )}
   
-      {/* Heart */}
       <View style={styles.heartContainer}>
         <Button
           icon={<Icon
@@ -100,17 +95,12 @@ type === 'row' ? (
         />
       </View>
     <View style={rowStyles.infoContainer}>
-      {/* Banner */}
       {bannerTitle && (
         <View style={[rowStyles.bannerContainer, getBannerStyle()]}>
           <Text style={styles.bannerText}>{bannerTitle}</Text>
         </View>
       )}
-
-      {/* Heart */}
-    
-
-      {/* Price and Descriptions */}
+  
       <View style={rowStyles.textContainer}>
         {price && (
           <View style={rowStyles.priceContainer}>
@@ -136,7 +126,6 @@ type === 'row' ? (
     </View>
   </View>
 ) : (
-  // Default vertical layout
   <View style={[styles.container, { width, height },]}>
     <Image
       style={styles.backgroundImage}
@@ -144,7 +133,6 @@ type === 'row' ? (
       contentFit="cover"
     />
 
-    {/* Price and Description - Bottom Left */}
     <View style={styles.bottomContainer}>
       {price && (
         <View style={styles.priceContainer}>
@@ -155,14 +143,12 @@ type === 'row' ? (
       {description2 && <Text style={styles.descriptionText}>{description2}</Text>}
     </View>
 
-    {/* Banner */}
     {bannerTitle && (
       <View style={[styles.bannerContainer, getBannerStyle()]}>
         <Text style={styles.bannerText}>{bannerTitle}</Text>
       </View>
     )}
 
-    {/* Heart */}
     <View style={styles.heartContainer}>
       <Button
         icon={<Icon

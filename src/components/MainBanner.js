@@ -1,22 +1,31 @@
 import { View, Text } from 'react-native';
-import mainBanner from "../assets/images/main-banner.jpg"
 import { ImageBackground } from 'react-native';
 import Button from './Button'
-import { Dimensions } from 'react-native';
-const { width } = Dimensions.get('window');
+import { useAssets } from 'expo-asset';
+
 const MainBanner = () => {
+
+  const [bannerAsset, error] = useAssets([require('../../assets/images/main-banner.jpg')]);
+  
+  // Don't render until the asset is loaded
+  if (!bannerAsset || bannerAsset.length === 0) {
+    return null; 
+  }
+  
   return (
     <ImageBackground
-      source={mainBanner}
+      source={bannerAsset[0]}
+      resizeMode="cover"
       style={{
         position: "relative",
-        width: width,
-        height: 300,
         justifyContent: "flex-end",
-        padding: 20,
         paddingBottom: 40,
+        paddingLeft: 20,
+        width: '100%',
+        height: 300,  
+        overflow: 'hidden'    
       }}
-      resizeMode="cover"
+    
     >
       <Text style={{
         fontSize: 20,

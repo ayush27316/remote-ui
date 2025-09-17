@@ -12,20 +12,22 @@ import {
   Image,
   StatusBar,
 } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 import { MaterialIcons, AntDesign, Ionicons } from '@expo/vector-icons';
 import MockEmulator from '../components/MockEmulator';
 
 const { width: screenWidth, height: screenHeight } = Dimensions.get('window');
 
-const LandingPage = () => {
+const Home = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
+  const [showMobileMessage, setShowMobileMessage] = useState(false);
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const slideAnim = useRef(new Animated.Value(30)).current;
   const scrollViewRef = useRef(null);
 
+  // Add animation on mount and check screen size
   useEffect(() => {
-    // Initial animation
     Animated.parallel([
       Animated.timing(fadeAnim, {
         toValue: 1,
@@ -34,11 +36,17 @@ const LandingPage = () => {
       }),
       Animated.timing(slideAnim, {
         toValue: 0,
-        duration: 800,
+        duration: 1000,
         useNativeDriver: true,
       }),
     ]).start();
+
+    // Show mobile message if screen is too small
+    if (screenWidth < 768) {
+      setShowMobileMessage(true);
+    }
   }, []);
+
 
   const handleScroll = (event) => {
     const scrollY = event.nativeEvent.contentOffset.y;
@@ -81,6 +89,25 @@ const LandingPage = () => {
     <View style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor="#1a1a2e" />
       
+      {/* Mobile Message Overlay */}
+      {showMobileMessage && (
+        <View style={styles.mobileMessageOverlay}>
+          <View style={styles.mobileMessage}>
+            <MaterialIcons name="laptop" size={48} color="#6366f1" />
+            <Text style={styles.mobileMessageTitle}>Better Experience on Desktop</Text>
+            <Text style={styles.mobileMessageText}>
+              For the best experience with our interactive demo, please switch to a laptop or desktop screen.
+            </Text>
+            <TouchableOpacity
+              style={styles.mobileMessageButton}
+              onPress={() => setShowMobileMessage(false)}
+            >
+              <Text style={styles.mobileMessageButtonText}>Continue Anyway</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      )}
+      
       {/* Fixed Navigation Header */}
       <Animated.View style={[
         styles.navHeader,
@@ -119,10 +146,15 @@ const LandingPage = () => {
         {/* Hero Section */}
         <Animated.View 
           style={[
-            styles.heroSection,
             { opacity: fadeAnim, transform: [{ translateY: slideAnim }] }
           ]}
         >
+          <LinearGradient
+            colors={['#1a1a2e', '#16213e', '#0f3460']}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 1 }}
+            style={styles.heroSection}
+          >
           <View style={styles.heroContent}>
             <View style={styles.heroText}>
               <Text style={styles.heroTitle}>Remote UI Rendering</Text>
@@ -172,6 +204,7 @@ const LandingPage = () => {
               </View>
             </View>
           </View>
+          </LinearGradient>
         </Animated.View>
 
 
@@ -202,7 +235,7 @@ const LandingPage = () => {
                 We're moving toward a future where applications transform themselves based on real-world context, user preferences, and business needs—all without traditional update cycles.
               </Text>
               <Text style={styles.futureParagraph}>
-                This technology represents more than innovation—it's the foundation for responsive, adaptive digital experiences that evolve with users rather than against them.
+                This technology represents more than innovation—it's the foundation for responsive, adaptive digital experiences that evolve with users.
               </Text>
             </View>
           </View>
@@ -214,7 +247,7 @@ const LandingPage = () => {
             <View style={styles.footerProfile}>
               <View style={styles.footerProfileImage}>
                 <Image 
-                  source={require('../assets/images/ayush.png')} 
+                  source={require('../../assets/images/ayush.png')} 
                   style={styles.profileImage}
                   resizeMode="cover"
                 />
@@ -324,8 +357,6 @@ const styles = StyleSheet.create({
   // Hero Section
   heroSection: {
     minHeight: screenHeight,
-    backgroundColor: '#1a1a2e',
-    background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 20,
@@ -599,6 +630,64 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: 'rgba(255, 255, 255, 0.6)',
   },
+
+  // Mobile Message Styles
+  mobileMessageOverlay: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+    zIndex: 2000,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  mobileMessage: {
+    backgroundColor: '#ffffff',
+    borderRadius: 20,
+    padding: 40,
+    alignItems: 'center',
+    maxWidth: 400,
+    width: '100%',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 10 },
+    shadowOpacity: 0.3,
+    shadowRadius: 20,
+    elevation: 10,
+  },
+  mobileMessageTitle: {
+    fontSize: 24,
+    fontWeight: '700',
+    color: '#1a202c',
+    textAlign: 'center',
+    marginTop: 20,
+    marginBottom: 16,
+  },
+  mobileMessageText: {
+    fontSize: 16,
+    color: '#4a5568',
+    textAlign: 'center',
+    lineHeight: 24,
+    marginBottom: 30,
+  },
+  mobileMessageButton: {
+    backgroundColor: '#6366f1',
+    paddingHorizontal: 32,
+    paddingVertical: 12,
+    borderRadius: 12,
+    shadowColor: '#6366f1',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 4,
+  },
+  mobileMessageButtonText: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#ffffff',
+  },
 });
 
-export default LandingPage;
+export default Home;

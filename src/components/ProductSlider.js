@@ -1,15 +1,15 @@
 import React from 'react';
 import { ScrollView, View, StyleSheet } from 'react-native';
 import Product from './Product'; // Ensure this path is correct
-import shoes1 from '../assets/images/1.png';
-import shoes2 from '../assets/images/2.png';
-import shoes3 from '../assets/images/3.png';
-import shoes4 from '../assets/images/4.png';
-import shoes5 from '../assets/images/5.png';
-import shoes6 from '../assets/images/6.png';
-import shoes7 from '../assets/images/7.png';
-import shoes8 from '../assets/images/8.png';
-import shoes9 from '../assets/images/9.png';
+import shoes1 from '../../assets/images/1.png';
+import shoes2 from '../../assets/images/2.png';
+import shoes3 from '../../assets/images/3.png';
+import shoes4 from '../../assets/images/4.png';
+import shoes5 from '../../assets/images/5.png';
+import shoes6 from '../../assets/images/6.png';
+import shoes7 from '../../assets/images/7.png';  
+import shoes8 from '../../assets/images/8.png';
+import shoes9 from '../../assets/images/9.png';
 
 const ProductSlider = () => {
   const productData = [

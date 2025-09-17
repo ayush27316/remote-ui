@@ -5,7 +5,6 @@ import {Text, View} from 'react-native'
 import { Button } from '../../components';
 import { useMemo } from 'react';
 import Wrapper from './Wrapper'
-import { ImageBackground } from 'react-native';
 
 const RegisterProvider = ( {children}) => {
 

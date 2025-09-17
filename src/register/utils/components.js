@@ -8,6 +8,7 @@ const componentMap = {
   'FlatList': ReactNative.FlatList,
   'SectionList': ReactNative.SectionList,
   'Image': ReactNative.Image,
+  'ImageBackground': ReactNative.ImageBackground,
   'TextInput': ReactNative.TextInput,
   'TouchableOpacity': ReactNative.TouchableOpacity,
   'TouchableHighlight': ReactNative.TouchableHighlight,

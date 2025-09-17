@@ -3,6 +3,7 @@ import Renderer from "./Renderer";
 import {Text, View} from 'react-native'
 import c from './constants'
 import { Image } from 'react-native';
+import { ImageBackground } from 'react-native';
 import {
   BottomNavigation,
   Button,
@@ -12,10 +13,9 @@ import {
   Product,
   ProductCaraousal,
   ProductList,
-  MainBanner,
   Timer,
   FlickerText,
-  ImageBackground
+  MainBanner
 } from '../../components'; 
 
 const components = {
@@ -27,9 +27,9 @@ const components = {
   Product,
   ProductCaraousal,
   ProductList,
-  MainBanner,
   Timer,
   FlickerText,
+  MainBanner,
   ImageBackground
 };
 
@@ -102,6 +102,7 @@ class Register {
 
   
   async init(){
+    console.log('Register: Starting initialization...');
 
     //native and primitive components
     this.registerComponent({name : 'View',component: View,type: 'component',properties: {}});
@@ -119,6 +120,8 @@ class Register {
         properties: {}
       });
     });
+    
+    console.log('Register: Initialization completed successfully');
     //read app config-> load existing schemas 
     //register and initiate pre-render 
     // const configRaw = await store.read('config');

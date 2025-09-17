@@ -1,7 +1,9 @@
-import { View, StyleSheet, Platform, TouchableOpacity, Text } from 'react-native';
+import React from 'react';
+import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { Image } from 'expo-image';
 import { useNavigation, useRoute } from '@react-navigation/native';
+import { useAssets } from 'expo-asset';
 
 const navItems = [
   { name: 'Search', icon: 'search1', route: 'Shop' },
@@ -9,18 +11,19 @@ const navItems = [
   { name: 'WishList', icon: 'hearto', route: 'WishList' },
 ];
 
-const BottomNav = ({ cartCount, wishListCount }) => {
+const BottomNav = ({ cartCount = 0, wishListCount = 0 }) => {
   const navigation = useNavigation();
   const route = useRoute();
-
+  const [logoAsset, error] = useAssets([require('../../assets/images/logo.jpeg')]);
+  
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-        <Image
-          style={{ width: 40, height: 40 }}
-          source={require('../assets/images/logo.jpeg')}
-          contentFit="cover"
-        />
+        {
+          logoAsset 
+            ?  <Image style={{ width: 40, height: 40 }} source={logoAsset[0]} contentFit="cover"/> 
+            : null
+        } 
       </TouchableOpacity>
 
       {navItems.map((item) => {

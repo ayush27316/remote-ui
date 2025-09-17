@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Animated, TextProps, TextStyle } from 'react-native';
+import { Animated } from 'react-native';
 
 const FlickerText = ({
   children,

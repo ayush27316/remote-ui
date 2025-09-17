@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Dimensions } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import MockPhone from './MockPhone';
@@ -102,7 +102,7 @@ const MockEmulator = () => {
                 <Text style={styles.stepTitle}>
                   {!isComplete ? (
                     currentStep === 0 ? "Ready to Start" : demoSteps[currentStep - 1]?.title || ""
-                  ) : "Demo Complete! ✨"}
+                  ) : "Demo Complete!"}
                 </Text>
                 <Text style={styles.stepDescription}>
                   {!isComplete ? (
@@ -167,12 +167,11 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#0f172a',
     width: '130vh',
-    height:'90vh',
+    height: 800,
     borderRadius: 20,
     overflow: 'hidden',
   },
-  
-  // Header
+
   header: {
     height: 60,
     backgroundColor: '#1e293b',
@@ -232,15 +231,11 @@ const styles = StyleSheet.create({
     color: '#10b981',
     fontWeight: '600',
   },
-
-  // Main Layout
   main: {
     flex: 1,
     flexDirection: 'row',
     minHeight: 0,
   },
-
-  // Phone Section
   phoneSection: {
     width: '40%',
     backgroundColor: '#1e293b',
@@ -281,12 +276,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 20
   },
-
-  // Controls Section
   controlsSection: {
     flex: 1,
     backgroundColor: '#1e293b',
     minHeight: 0,
+    maxHeight: 740,
   },
   controlsSectionCompact: {
     minWidth: '60%',
@@ -315,6 +309,7 @@ const styles = StyleSheet.create({
   controlsContent: {
     flex: 1,
     padding: 20,
+    minHeight: 0, 
   },
 
   // Progress Section
@@ -346,7 +341,6 @@ const styles = StyleSheet.create({
     borderColor: '#10b981',
   },
 
-  // Step Section
   stepSection: {
     marginBottom: 20,
   },
@@ -393,8 +387,6 @@ const styles = StyleSheet.create({
     color: '#cbd5e1',
     lineHeight: 22,
   },
-
-  // Schema Section
   schemaSection: {
     marginBottom: 20,
   },
@@ -408,7 +400,7 @@ const styles = StyleSheet.create({
   },
   codeContainer: {
     backgroundColor: '#0f172a',
-    maxHeight: 350,
+    height: 350,
     borderWidth: 1,
     borderColor: '#334155',
   },
@@ -419,8 +411,6 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     padding: 16,
   },
-
-  // Action Section
   actionSection: {
     padding: 20,
     borderTopWidth: 1,

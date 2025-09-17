@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo } from 'react';
+import React, { useCallback} from 'react';
 import {
   ActivityIndicator,
   Platform,
@@ -11,9 +11,6 @@ import {
 import Icon from './Icon'
 import useNavigation  from '../navigation/hooks/useNavigation';
 
-
-// Need to implement simple metrics
-// Notification: suppose addToCart button failed, or for other reasons if 
 
 const Button = ({
   title = '',
@@ -85,7 +82,7 @@ const Button = ({
           buttonStyle,
         ])}
       >
-        {/* Activity Indicator on loading */}
+
         {loading && (
           <ActivityIndicator
             style={StyleSheet.flatten([styles.loading, loadingStyle])}

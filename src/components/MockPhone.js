@@ -7,22 +7,14 @@ const MockPhone = ({ component: Child, ...props }) => {
   return (
     <View style={styles.container}>
       <View style={styles.phoneFrame}>
-        {/* Dynamic Island */}
-        <View style={styles.dynamicIsland} />
-
-        {/* Physical Buttons */}
+        <View style={styles.notch} />
         <View style={[styles.button, styles.powerButton]} />
         <View style={[styles.button, styles.volumeUp]} />
         <View style={[styles.button, styles.volumeDown]} />
         <View style={[styles.button, styles.muteSwitch]} />
-
-        {/* Screen Content */}
         <View style={styles.screen}>
           <Child {...props} />
         </View>
-
-        {/* Screen Reflection Effect */}
-        <View style={styles.screenReflection} />
       </View>
     </View>
   );
@@ -33,7 +25,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    padding: 16,
+    padding: 0,
   },
   phoneFrame: {
     position: "relative",
@@ -48,9 +40,9 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: "#374151",
     width: 320,
-    height: 660, // Proper aspect ratio: 300 * 2.17 ≈ 650
+    height: 660, 
   },
-  dynamicIsland: {
+  notch: {
     position: "absolute",
     top: 12,
     left: "50%",
@@ -77,7 +69,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.15,
     shadowRadius: 8,
     elevation: 8,
-    marginTop: 30, // Add space for navigation near the notch
+    marginTop: 30,
   },
   screenReflection: {
     position: "absolute",

@@ -1,5 +1,11 @@
 // Christmas Demo Schemas - Progressive UI Transformation
 
+//this is a work around to load the images for the demo
+//Better way to do this is to provide functionality for frtc
+require('../../images/santa.png');
+require('../../images/christmas2.jpg');
+
+
 // Step 1: Add Christmas Header with Santa Icon
 export const christmasHeaderStep1 = `{
   "v:name": "View",
@@ -151,7 +157,6 @@ export const christmasMainBannerStep2 = `{
             "color": "white",
             "letterSpacing": 1.5
           },
-          "elevated": true,
           "height": 45
         }
       ]
@@ -253,67 +258,6 @@ export const christmasBottomNavStep3 = `{
   ]
 }`;
 
-// Step 4: Complete Christmas Theme with Animated Elements
-export const christmasCompleteStep4 = `{
-  "v:name": "View",
-  "style": {
-    "flex": 1,
-    "backgroundColor": "#f8f4f0"
-  },
-  "v:children": [
-    {
-      "v:name": "View",
-      "style": {
-        "position": "absolute",
-        "top": 0,
-        "left": 0,
-        "right": 0,
-        "height": 4,
-        "backgroundColor": "#c41e3a",
-        "background": "linear-gradient(90deg, #c41e3a 0%, #228b22 50%, #c41e3a 100%)",
-        "zIndex": 100
-      }
-    },
-    {
-      "v:name": "View",
-      "style": {
-        "position": "absolute",
-        "top": 80,
-        "left": 20,
-        "right": 20,
-        "backgroundColor": "rgba(196, 30, 58, 0.1)",
-        "borderRadius": 15,
-        "padding": 15,
-        "borderWidth": 1,
-        "borderColor": "rgba(196, 30, 58, 0.2)",
-        "zIndex": 1
-      },
-      "v:children": [
-        {
-          "v:name": "Text",
-          "style": {
-            "fontSize": 14,
-            "fontWeight": "bold",
-            "color": "#c41e3a",
-            "textAlign": "center",
-            "letterSpacing": 1
-          },
-          "v:children": "🎅 Ho Ho Ho! Christmas Magic Applied! 🎄"
-        },
-        {
-          "v:name": "Text",
-          "style": {
-            "fontSize": 12,
-            "color": "#666",
-            "textAlign": "center",
-            "marginTop": 5
-          },
-          "v:children": "Your app has been transformed with festive Christmas themes!"
-        }
-      ]
-    }
-  ]
-}`;
 
 // Demo step configurations
 export const demoSteps = [
@@ -341,12 +285,4 @@ export const demoSteps = [
     schema: christmasBottomNavStep3,
     changes: ["Christmas green background", "Red accent for active state", "Enhanced shadows"]
   }
-  // {
-  //   id: 4,
-  //   title: "Complete Christmas Magic",
-  //   description: "Add final Christmas touches with festive overlays and messaging",
-  //   componentName: "Background",
-  //   schema: christmasCompleteStep4,
-  //   changes: ["Christmas gradient border", "Festive success message", "Magical completion overlay"]
-  // }
 ];
