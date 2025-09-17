@@ -219,7 +219,7 @@ export const christmasBottomNavStep3 = `{
       "variant": "clear",
       "type": "link",
       "href": "Search",
-      "iconName": "search",
+      "iconName": "menu",
       "color": "#ffffff",
       "style": {
         "alignItems": "center",
@@ -231,7 +231,7 @@ export const christmasBottomNavStep3 = `{
       "variant": "clear",
       "type": "link",
       "href": "Cart",
-      "iconName": "bag",
+      "iconName": "settings",
       "color": "#ffffff",
       "style": {
         "alignItems": "center",
@@ -243,7 +243,7 @@ export const christmasBottomNavStep3 = `{
       "variant": "clear",
       "type": "link",
       "href": "Profile",
-      "iconName": "person",
+      "iconName": "user",
       "color": "#ffffff",
       "style": {
         "alignItems": "center",
@@ -319,7 +319,7 @@ export const christmasCompleteStep4 = `{
 export const demoSteps = [
   {
     id: 1,
-    title: "Step 1: Christmas Header",
+    title: "Christmas Header",
     description: "Transform the header with Christmas colors and Santa icon",
     componentName: "Header",
     schema: christmasHeaderStep1,
@@ -327,7 +327,7 @@ export const demoSteps = [
   },
   {
     id: 2,
-    title: "Step 2: Festive Main Banner", 
+    title: "Festive Main Banner", 
     description: "Replace the main banner with Christmas-themed imagery and content",
     componentName: "MainBanner",
     schema: christmasMainBannerStep2,
@@ -335,18 +335,18 @@ export const demoSteps = [
   },
   {
     id: 3,
-    title: "Step 3: Christmas Navigation",
+    title: "Christmas Navigation",
     description: "Update bottom navigation with Christmas color scheme",
     componentName: "BottomNavigation", 
     schema: christmasBottomNavStep3,
     changes: ["Christmas green background", "Red accent for active state", "Enhanced shadows"]
-  },
-  {
-    id: 4,
-    title: "Step 4: Complete Christmas Magic",
-    description: "Add final Christmas touches with festive overlays and messaging",
-    componentName: "Background",
-    schema: christmasCompleteStep4,
-    changes: ["Christmas gradient border", "Festive success message", "Magical completion overlay"]
   }
+  // {
+  //   id: 4,
+  //   title: "Complete Christmas Magic",
+  //   description: "Add final Christmas touches with festive overlays and messaging",
+  //   componentName: "Background",
+  //   schema: christmasCompleteStep4,
+  //   changes: ["Christmas gradient border", "Festive success message", "Magical completion overlay"]
+  // }
 ];

@@ -10,10 +10,10 @@ import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import { StatusBar } from 'react-native';
 require('./assets/images/main-banner.jpg');
 require('./assets/images/christmas2.jpg');
-import Home from './pages/Home';
+import LandingPage from './pages/LandingPage';
 
 const pages = {
-  Home
+  LandingPage
 };
 
 
@@ -127,7 +127,7 @@ function AppInner() {
       />
       <Navigator
         pages={register.getComponentsByType('page')}
-        initialRouteName={'Home'}
+        initialRouteName={'LandingPage'}
       />
     </>
   );

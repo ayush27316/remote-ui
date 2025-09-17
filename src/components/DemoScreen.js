@@ -14,11 +14,16 @@ const DemoScreen = () => {
   const MainBanner = useMemo(()=>(register.getComponent('MainBanner')));
   //const Banner = useMemo(()=>(register.getComponent('ChristmasBanner')),[]);
   const Header = useMemo(()=>(register.getComponent('Header')));
+  const BottomNavigation = useMemo(()=>(register.getComponent('BottomNavigation')));
 
   return (
   <>
     <Header label='HELLO' />
-      <ScrollView style={{ backgroundColor: 'white' }}>
+      <ScrollView 
+        style={{ backgroundColor: 'white' }}
+        showsVerticalScrollIndicator={false}
+        showsHorizontalScrollIndicator={false}
+      >
         <MainBanner/>      
           <View style={{ marginTop: -50 }}>
             <ProductSlider />
