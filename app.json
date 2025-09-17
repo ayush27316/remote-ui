@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "nshop",
-    "slug": "nshop",
+    "name": "Remote UI",
+    "slug": "remote-ui",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
-    "scheme": "nshop",
+    "scheme": "remote-ui",
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.satya164.reactnavigationtemplate"
